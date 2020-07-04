@@ -1,6 +1,7 @@
 package example;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * @author : eternalteach
@@ -25,7 +26,18 @@ public class IncompletePlayer {
         String[] completion = {"mislav", "stanko", "mislav"};
 
         IncompletePlayer ip = new IncompletePlayer();
+        long start;
+        long end;
+        start = System.nanoTime();
+        System.out.println(ip.solution2(participant, completion));
+        end = System.nanoTime();
+        System.out.println((end - start)/1000+"ms");
+
+        start = System.nanoTime();
         System.out.println(ip.solution(participant, completion));
+        end = System.nanoTime();
+        System.out.println((end - start)/1000+"ms");
+
     }
 
     public String solution(String[] participant, String[] completion) {
@@ -45,6 +57,20 @@ public class IncompletePlayer {
             answer = participant[participant.length - 1];
         }
 
+        return answer;
+    }
+
+    public String solution2(String[] participant, String[] completion) {
+        String answer = "";
+        HashMap<String, Integer> hm = new HashMap<String, Integer>();
+        for (String player : participant) hm.put(player, hm.getOrDefault(player, 0) + 1);
+        for (String player : completion) hm.put(player, hm.get(player) - 1);
+
+        for (String key : hm.keySet()) {
+            if (hm.get(key) != 0){
+                answer = key;
+            }
+        }
         return answer;
     }
 }
