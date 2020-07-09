@@ -9,6 +9,7 @@ package example;
  * 1. 2016년은 윤년입니다.
  * 2. 2016년 a월 b일은 실제로 있는 날 입니다.
  */
+// 20.07.06 해결 16분 1초 걸림
 public class T2016 {
 
     public static void main(String[] args) {
