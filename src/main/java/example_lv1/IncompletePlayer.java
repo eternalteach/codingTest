@@ -1,4 +1,4 @@
-package example;
+package example_lv1;
 
 import java.util.Arrays;
 import java.util.HashMap;

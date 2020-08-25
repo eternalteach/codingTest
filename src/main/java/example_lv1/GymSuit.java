@@ -1,7 +1,4 @@
-package example;
-
-import java.util.Queue;
-import java.util.Stack;
+package example_lv1;
 
 /**
  * @author : eternalteach
